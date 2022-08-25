@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Horoscope</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <!-- nav bar start -->
+        <nav class="navbar navbar-expand-lg navbarcolor">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Horoscope</a>
+          </div>
+        </nav>
+        <!-- nav bar end -->
+        <div class="my-2 text-center">
+          <h1>Horoscope</h1>
+          <h5>Horoscopes and Astrology reports Online</h5>
+
+          <form action="./details.html">
+            <div class="d-flex">
+              <input
+                class="form-control me-2"
+                id="dateOfBirthClass"
+                type="date"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success searchButton"
+                type="submit"
+                onclick="find()"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="text-center my-3">
+          <p id="datepara"></p>
+        </div>
+        <!-- <div>
+              <p id="horoscopeContent" class="text-center"></p>
+            </div> -->
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/Aries.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=aries">Aries</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/taurus.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=taurus">TAURES</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/gemini.webp" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=gemini">Gemini</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/Cancer.webp" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=cancer">CANCER</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/leo.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=leo">LEO</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/virgo.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=virgo">VIRGO</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/libra.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=libra">LIBRA</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/scorpio.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=scorpio">SCORPIO</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="./images/sagittarius.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <a href="./details.html?sign=sagittarius">SAGITTARIUS</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/capricon.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=capricon">CAPRICORN</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/aquaris.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=aquaris">AQUARIUS</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="./images/pisces.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="./details.html?sign=pisces">PISCES</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer starts -->
+        <footer
+          class="text-center text-lg-start bg-light text-muted my-2 navbarcolor"
+        >
+          <div class="text-center p-4">© 2022 Copyright:</div>
+        </footer>
+        <p id="description"></p>
+        <img id="imageId" src="" alt="" />
+        <!-- footer ends -->
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./javascripts.js"></script>
+    <script src="./details.js"></script>
+  </body>
+</html>
